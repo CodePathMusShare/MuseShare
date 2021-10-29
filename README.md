@@ -11,11 +11,9 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
 This is an app that lets the user listen and create music playlists and connect with other users by messaging, sharing, and commenting on songs.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:**
 - Social, Entertainment, Music
 - **Mobile:**
@@ -36,14 +34,12 @@ This is an app that lets the user listen and create music playlists and connect 
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
 * User can login and sign up
 * User can log out
 * navigation bar with Home, Playlist, Messaging
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
 * Add a profile tab in navigation bar
 * uploading your own song
 * Show more details about songs
@@ -53,20 +49,16 @@ This is an app that lets the user listen and create music playlists and connect 
 ### 2. Screen Archetypes
 
 * [Login/Sign up Screen]
-   * [list associated required story here]
    * User can login and sign up
    * create or use existing username and password
 * [Home Screen]
-   * [list associated required story here]
    *  navigation bar with Home, Playlist, Messaging
    *  list out most recent songs
    * User can log out
 * [Playlist Screen]
-   * [list associated required story here]
    *  navigation bar with Home, Playlist, Messaging
    *  list out songs that user likes
 * [Messaging Screen]
-   * [list associated required story here]
    *  navigation bar with Home, Playlist, Messaging
    *  chatbox where we can message other users
 
@@ -86,13 +78,10 @@ This is an app that lets the user listen and create music playlists and connect 
    * [Playlist Screen]
    * [Messaging Screen]
 * [Home Screen]
-   * [list screen navigation here]
    * list of songs with details and comments
 * [Playlist Screen]
-   * [list screen navigation here]
    * Screen of liked songs by user
 * [Messaging Screen]
-   * [list screen navigation here]
    * Screen of messages between users
 
 ## Wireframes
