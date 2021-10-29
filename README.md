@@ -87,7 +87,7 @@ This is an app that lets the user listen and create music playlists and connect 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 <img src="Wireframe Image #1.jpg" width=600>
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![IMG-0788](https://user-images.githubusercontent.com/57238276/139496230-dce7f540-0342-4ce5-99eb-deba6a15bf14.jpg)
 
 ### [BONUS] Digital Wireframes & Mockups
 
