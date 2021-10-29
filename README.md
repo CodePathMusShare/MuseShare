@@ -15,18 +15,18 @@ This is an app that lets the user listen and create music playlists and connect 
 
 ### App Evaluation
 - **Category:**
-- Social, Entertainment, Music
+  - Social, Entertainment, Music
 - **Mobile:**
-- There is social interaction with the users.
+  - There is social interaction with the users.
 - **Story:**
-- Discover and connect with people with same interests. 
-- People can have free sign up and can easily express their thoughts and opinions on music compared to other apps.
+  - Discover and connect with people with same interests. 
+  - People can have free sign up and can easily express their thoughts and opinions on music compared to other apps.
 - **Market:**
-- This will benefit anyone who enjoys listening to music
+  - This will benefit anyone who enjoys listening to music
 - **Habit:**
-- Users may use this app frequently if they choose to. Users can create new playlists or listen to already made playlists.
+  - Users may use this app frequently if they choose to. Users can create new playlists or listen to already made playlists.
 - **Scope:** 
-- We have defined features that we want to implement and the project will be challenging but not too complex. 
+  - We have defined features that we want to implement and the project will be challenging but not too complex. 
 
 ## Product Spec
 
