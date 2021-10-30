@@ -97,6 +97,13 @@ This is an app that lets the user listen and create music playlists and connect 
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+| Property | Type | Description |
+| --- | --- | --- |
+| user | Pointer to user | The users using the app |
+| image | File | image of songs |
+| title | String | title of songs |
+| commentsCount | Number | number of comments that has been posted to a song |
+| likesCount | Number | number of likes for songs and creates playlist |
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
