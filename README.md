@@ -100,10 +100,14 @@ This is an app that lets the user listen and create music playlists and connect 
 | Property | Type | Description |
 | --- | --- | --- |
 | user | Pointer to user | The users using the app |
-| image | File | image of songs |
-| title | String | title of songs |
-| commentsCount | Number | number of comments that has been posted to a song |
-| likesCount | Number | number of likes for songs and creates playlist |
+| image | File | Image of songs |
+| title | String | Title of songs |
+| commentsCount | Number | Number of comments that has been posted to a song |
+| likesCount | Number | Number of likes for songs and creates playlist |
+| createdAt  | DateTime | Date when song is uploaded |
+| updatedAt | DateTime | Date when song is last updated |
+| songs | File/String/API | The actual songs displayed in app |
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
