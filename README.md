@@ -118,25 +118,33 @@ This is an app that lets the user listen and create music playlists and connect 
 - Home Screen
   - (Read/GET) Get the list of songs
   - (Create/POST) Create comments
-  - (Delete) Delete comments
+  - (DELETE) Delete comments
   - (Create/POST) Make a like on a song
-  - (Delete) Delete a like on a song
+  - (DELETE) Delete a like on a song
+  - (GET) Search for songs
 - Playlist Screen
   - (Create/POST) Creating a playlists of liked songs
   - (Create/POST) Create comments
-  - (Delete) Delete comments
+  - (DELETE) Delete comments
   - (Create/POST) Make a like on a song
-  - (Delete) Delete a like on a song
+  - (DELETE) Delete a like on a song
+  - (PUT) Update the playlist
+  - (Create/POST) Add songs to playlist
 - Messaging Screen
   - (Create/POST) Creating messages
-  - (Delete) Deleting messages
+  - (DELETE) Deleting messages
   - (Create/POST) Create groupchats
   - (Read/GET) Get all users
 
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 - Spotify API
   - Base URL: https://developer.spotify.com/documentation/web-api/reference/#/
-  - | HTTP Verb | Endpoint | Description |
-    | --- | --- | --- |
-    | GET | /browse/new-releases | Gets the recent songs |
+| HTTP Verb | Endpoint | Description |
+| --- | --- | --- |
+| GET | /browse/new-releases | Gets the recent songs |
+| POST | /playlists/{playlist_id/tracks | Create a playlist |
+| POST | /playlists/{playlist_id/tracks | Add items to playlist |
+| PUT |  /playlists/{playlist_id/tracks | Update items from playlist |
+| DELETE | /playlists/{playlist_id/tracks | Remove items from playlists |
+| GET | /search | Search for songs |
 
