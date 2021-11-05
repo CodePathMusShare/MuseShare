@@ -139,6 +139,7 @@ This is an app that lets the user listen and create music playlists and connect 
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 - Spotify API
   - Base URL: https://developer.spotify.com/documentation/web-api/reference/#/
+  
   | HTTP Verb | Endpoint | Description |
   | --- | --- | --- |
   | GET | /browse/new-releases | Gets the recent songs |
