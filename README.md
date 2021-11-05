@@ -139,13 +139,12 @@ This is an app that lets the user listen and create music playlists and connect 
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 - Spotify API
   - Base URL: https://developer.spotify.com/documentation/web-api/reference/#/
-  
-| HTTP Verb | Endpoint | Description |
-| --- | --- | --- |
-| GET | /browse/new-releases | Gets the recent songs |
-| POST | /playlists/{playlist_id/tracks | Create a playlist |
-| POST | /playlists/{playlist_id/tracks | Add items to playlist |
-| PUT |  /playlists/{playlist_id/tracks | Update items from playlist |
-| DELETE | /playlists/{playlist_id/tracks | Remove items from playlists |
-| GET | /search | Search for songs |
+  | HTTP Verb | Endpoint | Description |
+  | --- | --- | --- |
+  | GET | /browse/new-releases | Gets the recent songs |
+  | POST | /playlists/{playlist_id/tracks | Create a playlist |
+  | POST | /playlists/{playlist_id/tracks | Add items to playlist |
+  | PUT |  /playlists/{playlist_id/tracks | Update items from playlist |
+  | DELETE | /playlists/{playlist_id/tracks | Remove items from playlists |
+  | GET | /search | Search for songs |
 
