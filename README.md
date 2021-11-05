@@ -111,4 +111,27 @@ This is an app that lets the user listen and create music playlists and connect 
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
+- Login/Sign Up Screen
+  - (Read/GET) Get username
+  - (Read/GET) Get password
+  - (Create/POST) Save username and password in database for sign up
+- Home Screen
+  - (Read/GET) Get the list of songs
+  - (Create/POST) Create comments
+  - (Delete) Delete comments
+  - (Create/POST) Make a like on a song
+  - (Delete) Delete a like on a song
+- Playlist Screen
+  - (Create/POST) Creating a playlists of liked songs
+  - (Create/POST) Create comments
+  - (Delete) Delete comments
+  - (Create/POST) Make a like on a song
+  - (Delete) Delete a like on a song
+- Messaging Screen
+  - (Create/POST) Creating messages
+  - (Delete) Deleting messages
+  - (Create/POST) Create groupchats
+  - (Read/GET) Get all users
+
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Spotify API
