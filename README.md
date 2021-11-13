@@ -35,9 +35,13 @@ This is an app that lets the user listen and create music playlists and connect 
 **Required Must-have Stories**
 
 - [x] User can login and sign up 
-## Walkthorugh Gif:
+## Walkthorugh Gifs:
 
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+<img src='walkthrough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
