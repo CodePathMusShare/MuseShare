@@ -41,16 +41,16 @@ This is an app that lets the user listen and create music playlists and connect 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-- [] User can log out
-- [] navigation bar with Home, Playlist, Messaging
+- [ ] User can log out
+- [ ] navigation bar with Home, Playlist, Messaging
 
 **Optional Nice-to-have Stories**
 
-- [] Add a profile tab in navigation bar
-- [] uploading your own song
-- [] Show more details about songs
-- [] Comment on different songs
-- [] Make specific users as friends to chat with
+- [ ] Add a profile tab in navigation bar
+- [ ] uploading your own song
+- [ ] Show more details about songs
+- [ ] Comment on different songs
+- [ ] Make specific users as friends to chat with
 
 ### 2. Screen Archetypes
 
