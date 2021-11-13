@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivAlbum"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/ivAlbum"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/ivAlbum"
+        tools:layout_editor_absoluteY="7dp"
+        tools:text="Easy On Me" />
+
+    <TextView
+        android:id="@+id/tvAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ivAlbum"
+        app:layout_constraintStart_toEndOf="@+id/ivAlbum"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="Adele"
+        tools:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btPlay"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/ivAlbum"
+        android:text="Play"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="319dp"
+        tools:layout_editor_absoluteY="39dp" />
+</RelativeLayout>

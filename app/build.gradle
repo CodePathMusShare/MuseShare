@@ -37,4 +37,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
+
+    // spotify api's
+//    implementation project(':spotify-app-remote')
+//    implementation "com.google.code.gson:gson:2.8.5"
+
+    // nav bar
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${designSupportVersion}"
 }
