@@ -4,17 +4,22 @@
 
     <item
         android:id="@+id/action_home"
-        android:icon="@android:drawable/ic_menu_compass"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="Home"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_playlist"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@drawable/ic_baseline_playlist_play_24"
         android:title="PlayList"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_message"
-        android:icon="@android:drawable/ic_menu_edit"
+        android:icon="@drawable/ic_baseline_message_24"
         android:title="Message"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings"
         app:showAsAction="always" />
 </menu>

@@ -40,14 +40,24 @@
 
     <Button
         android:id="@+id/btPlay"
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="42dp"
         android:layout_toEndOf="@+id/ivAlbum"
-        android:text="Play"
-        android:textSize="12sp"
+        app:icon="@drawable/ic_baseline_play_arrow_24"
         tools:layout_editor_absoluteX="319dp"
         tools:layout_editor_absoluteY="39dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="56dp"
+        android:layout_height="49dp"
+        android:layout_alignTop="@+id/btPlay"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@+id/btPlay"
+        android:text="Like"
+        android:textSize="10sp" />
 </RelativeLayout>
