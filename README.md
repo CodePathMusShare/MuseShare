@@ -32,10 +32,9 @@ This is an app that lets the user listen and create music playlists and connect 
 
 ### 1. User Stories (Required and Optional)
 
-**Required Must-have Stories**
+**Required Must-have Stories and Walkthrough Gifs**
 
 - [x] User can login and sign up 
-## Walkthorugh Gifs:
 
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
@@ -45,8 +44,13 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-- [ ] User can log out
-- [ ] navigation bar with Home, Playlist, Messaging
+- [X] User can log out
+<img src='walkthrough_logout.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+- [X] navigation bar with Home, Playlist, Messaging, and Settings
+<img src='NavBar2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 **Optional Nice-to-have Stories**
 
