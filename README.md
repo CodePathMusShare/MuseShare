@@ -49,7 +49,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-- [ ] navigation bar with Home, Playlist, Messaging
+- [X] navigation bar with Home, Playlist, Messaging
 
 **Optional Nice-to-have Stories**
 
