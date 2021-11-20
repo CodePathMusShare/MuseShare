@@ -19,8 +19,8 @@ import com.codepath.museshare.R;
  * create an instance of this fragment.
  */
 public class MessageFragment extends Fragment {
-    public static final String TAG = "HomeFragment";
-    private RecyclerView rvSongs;
+    public static final String TAG = "MessageFragment";
+    //private RecyclerView rvSongs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

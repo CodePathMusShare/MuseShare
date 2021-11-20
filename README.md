@@ -49,7 +49,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-- [X] navigation bar with Home, Playlist, Messaging
+- [X] navigation bar with Home, Playlist, Messaging, and Settings
+<img src='NavBar2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 **Optional Nice-to-have Stories**
 
