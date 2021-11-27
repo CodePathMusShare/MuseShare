@@ -53,4 +53,10 @@ dependencies {
 
     implementation "io.getstream:stream-chat-android-ui-components:4.18.0"
     implementation 'io.coil-kt:coil:1.3.2'
+
+    implementation 'com.spotify.android:auth:1.2.5' // Maven dependency
+
+    // All other dependencies for your app should also be here:
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
 }
