@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String TAG =  "LoginActivity";
     private EditText etUsername;
     private EditText etPassword;
-    private Button btnLogins
+    private Button btnLogins;
     private Button btnSignUp;
 
     @Override
@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
+        btnLogins = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -80,13 +80,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.i(TAG, "onClick login button");
-//                String username = etUsername.getText().toString();
-//                String password = etPassword.getText().toString();
-//                loginUser(username, password);
+                Log.i(TAG, "onClick login button");
+                String username = etUsername.getText().toString();
+                String password = etPassword.getText().toString();
+                loginUser(username, password);
             }
         });
     }
