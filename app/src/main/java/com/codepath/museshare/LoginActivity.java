@@ -1,5 +1,7 @@
 package com.codepath.museshare;
 
+import static com.spotify.sdk.android.auth.AccountsQueryParameters.CLIENT_ID;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,13 +18,17 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+import com.spotify.sdk.android.auth.AuthorizationClient;
+import com.spotify.sdk.android.auth.AuthorizationRequest;
+import com.spotify.sdk.android.auth.AuthorizationResponse;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String REDIRECT_URI = "com.museshare://callback";
     public static final String TAG =  "LoginActivity";
     private EditText etUsername;
     private EditText etPassword;
-    private Button btnLogin;
+    private Button btnLogins;
     private Button btnSignUp;
 
     @Override
@@ -30,13 +36,21 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        AuthorizationRequest.Builder builder =
+                new AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URI);
+
+        builder.setScopes(new String[]{"streaming"});
+        AuthorizationRequest request = builder.build();
+
+        AuthorizationClient.openLoginInBrowser(this, request);
+
         if(ParseUser.getCurrentUser() != null) {
             goMainActivity();
         }
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
+        btnLogins = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "onClick login button");
