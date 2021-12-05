@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.codepath.museshare.R;
-import com.codepath.museshare.databinding.ActivityMainBinding;
+import com.codepath.museshare.databinding.FragmentMessageBinding;
 
 import io.getstream.chat.android.client.ChatClient;
 import io.getstream.chat.android.client.api.models.FilterObject;
@@ -37,60 +37,60 @@ import static java.util.Collections.singletonList;
  */
 public class MessageFragment extends Fragment {
     public static final String TAG = "MessageFragment";
+    FragmentMessageBinding binding;
     //private RecyclerView rvSongs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_message, container, false);
+        binding = FragmentMessageBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        return view;
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        // Step 0 - inflate binding
-//        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
-//
-//        // Step 1 - Set up the client for API calls and the domain for offline storage
-//        ChatClient client = new ChatClient.Builder("b67pax5b2wdq", getApplicationContext())
-//                .logLevel(ChatLogLevel.ALL) // Set to NOTHING in prod
-//                .build();
-//        new ChatDomain.Builder(client, getApplicationContext()).build();
-//
-//        // Step 2 - Authenticate and connect the user
-//        User user = new User();
-//        user.setId("tutorial-droid");
-//        user.getExtraData().put("name", "Tutorial Droid");
-//        user.getExtraData().put("image", "https://bit.ly/2TIt8NR");
-//
-//        client.connectUser(
-//                user,
-//                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.NhEr0hP9W9nwqV7ZkdShxvi02C5PR7SJE7Cs4y7kyqg"
-//        ).enqueue();
-//
-//        // Step 3 - Set the channel list filter and order
-//        // This can be read as requiring only channels whose "type" is "messaging" AND
-//        // whose "members" include our "user.id"
-//        FilterObject filter = Filters.and(
-//                Filters.eq("type", "messaging"),
-//                Filters.in("members", singletonList(user.getId()))
-//        );
-//
-//        ChannelListViewModelFactory factory = new ChannelListViewModelFactory(
-//                filter,
-//                ChannelListViewModel.DEFAULT_SORT
-//        );
-//
-//        ChannelListViewModel channelsViewModel =
-//                new ViewModelProvider(this, factory).get(ChannelListViewModel.class);
-//
-//        // Step 4 - Connect the ChannelListViewModel to the ChannelListView, loose
-//        //          coupling makes it easy to customize
-//        ChannelListViewModelBinding.bind(channelsViewModel, binding.channelListView, this);
-//        binding.channelListView.setChannelItemClickListener(channel -> {
-//            //TODO
-//        });
+
+        // Step 1 - Set up the client for API calls and the domain for offline storage
+        ChatClient client = new ChatClient.Builder("b67pax5b2wdq", getApplicationContext())
+                .logLevel(ChatLogLevel.ALL) // Set to NOTHING in prod
+                .build();
+        new ChatDomain.Builder(client, getApplicationContext()).build();
+
+        // Step 2 - Authenticate and connect the user
+        User user = new User();
+        user.setId("tutorial-droid");
+        user.getExtraData().put("name", "Tutorial Droid");
+        user.getExtraData().put("image", "https://bit.ly/2TIt8NR");
+
+        client.connectUser(
+                user,
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.NhEr0hP9W9nwqV7ZkdShxvi02C5PR7SJE7Cs4y7kyqg"
+        ).enqueue();
+
+        // Step 3 - Set the channel list filter and order
+        // This can be read as requiring only channels whose "type" is "messaging" AND
+        // whose "members" include our "user.id"
+        FilterObject filter = Filters.and(
+                Filters.eq("type", "messaging"),
+                Filters.in("members", singletonList(user.getId()))
+        );
+
+        ChannelListViewModelFactory factory = new ChannelListViewModelFactory(
+                filter,
+                ChannelListViewModel.DEFAULT_SORT
+        );
+
+        ChannelListViewModel channelsViewModel =
+                new ViewModelProvider(this, factory).get(ChannelListViewModel.class);
+
+        // Step 4 - Connect the ChannelListViewModel to the ChannelListView, loose
+        //          coupling makes it easy to customize
+        ChannelListViewModelBinding.bind(channelsViewModel, binding.channelListView, this);
+        binding.channelListView.setChannelItemClickListener(channel -> {
+            //TODO
+        });
     }
 
 

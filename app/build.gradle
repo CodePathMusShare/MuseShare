@@ -40,8 +40,12 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation fileTree(dir: 'C:\\Users\\PC One\\AndroidStudioProjects\\MuseShare\\app\\libs', include: ['*.aar', '*.jar'], exclude: [])
+<<<<<<< HEAD
     //implementation files('C:\\Users\\PC One\\AndroidStudioProjects\\MuseShare\\app\\libs')
     implementation fileTree(dir: 'C:\\Users\\iqbal\\Downloads\\MuseShare\\MuseShare\\app\\libs', include: ['*.aar', '*.jar'], exclude: [])
+=======
+    implementation fileTree(dir: 'C:\\Users\\fazil\\AndroidStudioProjects\\MuseShare\\app\\libs', include: ['*.aar', '*.jar'], exclude: [])
+>>>>>>> 4cb2433944d03fcdaa3c0d03bee7175be8bc4585
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -70,6 +74,9 @@ dependencies {
     implementation "io.getstream:stream-chat-android-ui-components:4.18.0"
     implementation 'io.coil-kt:coil:1.3.2'
 
+<<<<<<< HEAD
+=======
     //spotify
 
+>>>>>>> 905ef154a430ca037ec10f16b54ea0bf7d59f8de
 }
