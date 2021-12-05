@@ -54,7 +54,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     implementation "com.google.code.gson:gson:2.8.6"
     implementation 'com.android.volley:volley:1.2.1'
-    //androidTestImplementation 'com.android.support.test:person_running:1.0.2'
+    androidTestImplementation 'com.android.support.test:person_running:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //implementation project(':app')
     implementation "com.google.code.gson:gson:2.8.6"
