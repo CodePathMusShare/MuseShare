@@ -24,7 +24,7 @@ import com.spotify.sdk.android.auth.AuthorizationResponse;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static final String REDIRECT_URI = "com.museshare://callback";
+    private static final String REDIRECT_URI = "com.MuseShare://callback";
     public static final String TAG =  "LoginActivity";
     private EditText etUsername;
     private EditText etPassword;
