@@ -25,11 +25,15 @@ import com.spotify.android.appremote.api.SpotifyAppRemote;
 import com.spotify.protocol.client.Subscription;
 import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
+import com.spotify.sdk.android.auth.AuthorizationClient;
+import com.spotify.sdk.android.auth.AuthorizationRequest;
+import com.spotify.sdk.android.auth.AuthorizationResponse;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String CLIENT_ID = "8d7a09be070b4364ae2b90c9c921b2de";
-    private static final String REDIRECT_URI = "com.museshare://callback";
+    private static final String CLIENT_ID = "9cfabf79d98246f39fb9665815392647";
+    private static final String REDIRECT_URI = "com.MuseShare://callback";
     private SpotifyAppRemote mSpotifyAppRemote;
+
 
 
     @Override
