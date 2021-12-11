@@ -24,8 +24,14 @@ import com.spotify.sdk.android.auth.AuthorizationResponse;
 
 public class LoginActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
     private static final String REDIRECT_URI = "com.MuseShare://callback";
+=======
+>>>>>>> 1672a96a1c982a362982c53301810510432a0773
     public static final String TAG =  "LoginActivity";
+    private static final String CLIENT_ID = "8d7a09be070b4364ae2b90c9c921b2de";
+    private static final String REDIRECT_URI = "com.MuseShare://callback";
+    private static final int REQUEST_CODE = 1337;
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogins;
@@ -42,11 +48,12 @@ public class LoginActivity extends AppCompatActivity {
         builder.setScopes(new String[]{"streaming"});
         AuthorizationRequest request = builder.build();
 
-        AuthorizationClient.openLoginInBrowser(this, request);
+        AuthorizationClient.openLoginActivity(this,REQUEST_CODE, request);
 
         if(ParseUser.getCurrentUser() != null) {
             goMainActivity();
         }
+
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
@@ -90,7 +97,30 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
 
+        // Check if result comes from the correct activity
+        if (requestCode == REQUEST_CODE) {
+            AuthorizationResponse response = AuthorizationClient.getResponse(resultCode, intent);
+
+            switch (response.getType()) {
+                // Response was successful and contains auth token
+                case TOKEN:
+                    // Handle successful response
+                    break;
+
+                // Auth flow returned an error
+                case ERROR:
+                    // Handle error response
+                    break;
+
+                // Most likely auth flow was cancelled
+                default:
+                    // Handle other cases
+            }
+        }
+    }
     private void loginUser(String username, String password) {
         Log.i(TAG, "Attempting to login user " + username);
         ParseUser.logInInBackground(username, password, new LogInCallback() {
