@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.codepath.museshare.ChannelActivity;
 import com.codepath.museshare.R;
 import com.codepath.museshare.databinding.FragmentMessageBinding;
 
@@ -89,7 +90,8 @@ public class MessageFragment extends Fragment {
         //          coupling makes it easy to customize
         ChannelListViewModelBinding.bind(channelsViewModel, binding.channelListView, this);
         binding.channelListView.setChannelItemClickListener(channel -> {
-            //TODO
+            startActivity(ChannelActivity.newIntent(this, channel)
+            );
         });
     }
 
