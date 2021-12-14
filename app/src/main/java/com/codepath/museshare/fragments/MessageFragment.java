@@ -90,7 +90,7 @@ public class MessageFragment extends Fragment {
         //          coupling makes it easy to customize
         ChannelListViewModelBinding.bind(channelsViewModel, binding.channelListView, this);
         binding.channelListView.setChannelItemClickListener(channel -> {
-            startActivity(ChannelActivity.newIntent(this, channel)
+            startActivity(ChannelActivity.newIntent(getContext(), channel)
             );
         });
     }

@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+//import com.codepath.museshare.databinding.FragmentMessageBinding;
 import com.codepath.museshare.databinding.ActivityChannelBinding;
 import com.codepath.museshare.fragments.MessageFragment;
 import com.getstream.sdk.chat.viewmodel.MessageInputViewModel;
@@ -29,8 +30,9 @@ import io.getstream.chat.android.ui.message.list.viewmodel.factory.MessageListVi
 public class ChannelActivity extends AppCompatActivity {
 
     private final static String CID_KEY = "key:cid";
+    ActivityChannelBinding binding;
 
-    public static Intent newIntent(MessageFragment context, Channel channel) {
+    public static Intent newIntent(Context context, Channel channel) {
         final Intent intent = new Intent(context, ChannelActivity.class);
         intent.putExtra(CID_KEY, channel.getCid());
         return intent;
@@ -41,7 +43,7 @@ public class ChannelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Step 0 - inflate binding
-        ActivityChannelBinding binding = ActivityChannelBinding.inflate(getLayoutInflater());
+        binding = ActivityChannelBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         String cid = getIntent().getStringExtra(CID_KEY);
