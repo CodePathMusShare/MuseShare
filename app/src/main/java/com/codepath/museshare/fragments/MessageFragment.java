@@ -11,17 +11,21 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.codepath.museshare.ChannelActivity;
+import com.codepath.museshare.LoginActivity;
 import com.codepath.museshare.R;
 import com.codepath.museshare.databinding.FragmentMessageBinding;
 
 import io.getstream.chat.android.client.ChatClient;
 import io.getstream.chat.android.client.api.models.FilterObject;
 import io.getstream.chat.android.client.logger.ChatLogLevel;
+import io.getstream.chat.android.client.models.Channel;
 import io.getstream.chat.android.client.models.Filters;
 import io.getstream.chat.android.client.models.User;
 import io.getstream.chat.android.livedata.ChatDomain;
@@ -30,6 +34,9 @@ import io.getstream.chat.android.ui.channel.list.viewmodel.ChannelListViewModelB
 import io.getstream.chat.android.ui.channel.list.viewmodel.factory.ChannelListViewModelFactory;
 
 import static java.util.Collections.singletonList;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,22 +61,48 @@ public class MessageFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Step 1 - Set up the client for API calls and the domain for offline storage
-        ChatClient client = new ChatClient.Builder("b67pax5b2wdq", getApplicationContext())
+        ChatClient client = new ChatClient.Builder("y4crq24crcyz", getApplicationContext())
                 .logLevel(ChatLogLevel.ALL) // Set to NOTHING in prod
                 .build();
         new ChatDomain.Builder(client, getApplicationContext()).build();
 
         // Step 2 - Authenticate and connect the user
         User user = new User();
-        user.setId("tutorial-droid");
-        user.getExtraData().put("name", "Tutorial Droid");
+
+        user.setId("codepath");
+        user.getExtraData().put("name", "Sarah Iqbal");
         user.getExtraData().put("image", "https://bit.ly/2TIt8NR");
+
+        String token = client.devToken(user.getId());
 
         client.connectUser(
                 user,
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidHV0b3JpYWwtZHJvaWQifQ.NhEr0hP9W9nwqV7ZkdShxvi02C5PR7SJE7Cs4y7kyqg"
-        ).enqueue();
+                token
+        ).enqueue(result -> {
+            if (result.isSuccess()) {
+                Toast.makeText(getContext(), "User Success!", Toast.LENGTH_SHORT).show();
+            } else {
+                // Handle result.error()
+                Log.e(TAG, "Issue with User!", result.error().getCause());
+                Toast.makeText(getContext(), "Issue with User!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
+//        String channelType1 = "messaging";
+//        String channelID1 = "group1";
+//        List<String> members1 = Arrays.asList("sarah-iqbal");
+//        client.createChannel(channelType1, channelID1, members1).enqueue(result -> {
+//            if (result.isSuccess()) {
+//                Channel channel = result.data();
+//            } else {
+//                // Handle result.error()
+//                Log.e(TAG, "Issue with channel!", result.error().getCause());
+//                Toast.makeText(getContext(), "Issue with channel1!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+
+//
         // Step 3 - Set the channel list filter and order
         // This can be read as requiring only channels whose "type" is "messaging" AND
         // whose "members" include our "user.id"
