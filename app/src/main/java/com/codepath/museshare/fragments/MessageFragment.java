@@ -1,6 +1,7 @@
 package com.codepath.museshare.fragments;
 
 import static com.parse.Parse.getApplicationContext;
+import static com.parse.Parse.getParseCacheDir;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.codepath.museshare.ChannelActivity;
 import com.codepath.museshare.LoginActivity;
 import com.codepath.museshare.R;
 import com.codepath.museshare.databinding.FragmentMessageBinding;
+import com.parse.ParseUser;
 
 import io.getstream.chat.android.client.ChatClient;
 import io.getstream.chat.android.client.api.models.FilterObject;
@@ -69,9 +71,12 @@ public class MessageFragment extends Fragment {
         // Step 2 - Authenticate and connect the user
         User user = new User();
 
-        user.setId("codepath");
-        user.getExtraData().put("name", "Sarah Iqbal");
-        user.getExtraData().put("image", "https://bit.ly/2TIt8NR");
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        user.setId(currentUser.getUsername());
+        Toast.makeText(getContext(), "User = "+currentUser.getUsername(), Toast.LENGTH_SHORT).show();
+        Log.i(TAG, "User"+ currentUser.getUsername());
+        //user.getExtraData().put("name", "Sarah Iqbal");
+        //user.getExtraData().put("image", "https://bit.ly/2TIt8NR");
 
         String token = client.devToken(user.getId());
 
@@ -83,7 +88,7 @@ public class MessageFragment extends Fragment {
                 Toast.makeText(getContext(), "User Success!", Toast.LENGTH_SHORT).show();
             } else {
                 // Handle result.error()
-                Log.e(TAG, "Issue with User!", result.error().getCause());
+                Log.e(TAG, "Issue with User!"+result.error().getMessage(), result.error().getCause());
                 Toast.makeText(getContext(), "Issue with User!", Toast.LENGTH_SHORT).show();
             }
         });
