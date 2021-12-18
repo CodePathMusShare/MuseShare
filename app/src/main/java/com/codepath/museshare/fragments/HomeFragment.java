@@ -15,6 +15,7 @@ import com.codepath.museshare.R;
 
 public class HomeFragment extends Fragment {
     public static final String TAG = "HomeFragment";
+   // public static final BaseApi
     private RecyclerView rvSongs;
 
     @Override
@@ -28,4 +29,8 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rvSongs = view.findViewById(R.id.rvSongs);
     }
+
+//    public void playlists(JsonHttpResponseHandler handler ) {
+//        String apiUrl = getApiUrl("playlists/playlist_id");
+//    }
 }
