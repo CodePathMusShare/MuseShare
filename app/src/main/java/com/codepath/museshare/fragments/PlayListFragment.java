@@ -15,7 +15,7 @@ import com.codepath.museshare.R;
 
 
 public class PlayListFragment extends Fragment {
-    public static final String TAG = "HomeFragment";
+    public static final String TAG = "PlaylistFragment";
     private RecyclerView rvSongs;
 
     @Override

@@ -24,13 +24,12 @@ import com.spotify.sdk.android.auth.AuthorizationResponse;
 
 public class LoginActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
+
     private static final String REDIRECT_URI = "com.MuseShare://callback";
-=======
->>>>>>> 1672a96a1c982a362982c53301810510432a0773
+
     public static final String TAG =  "LoginActivity";
     private static final String CLIENT_ID = "8d7a09be070b4364ae2b90c9c921b2de";
-    private static final String REDIRECT_URI = "com.MuseShare://callback";
+    //private static final String REDIRECT_URI = "com.MuseShare://callback";
     private static final int REQUEST_CODE = 1337;
     private EditText etUsername;
     private EditText etPassword;
