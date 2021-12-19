@@ -3,15 +3,19 @@ package com.codepath.museshare;
 import static com.spotify.sdk.android.auth.AccountsQueryParameters.CLIENT_ID;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.codepath.museshare.MainActivity;
 import com.codepath.museshare.R;
 import com.parse.LogInCallback;
@@ -24,10 +28,15 @@ import com.spotify.sdk.android.auth.AuthorizationResponse;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static final String REDIRECT_URI = "com.MuseShare://callback";
+<<<<<<< HEAD
+=======
 
+>>>>>>> 52cb038d91df14376168ff01ae900803185f820c
+    private static final String REDIRECT_URI = "com.MuseShare://callback";
+    private static final String SCOPES = "user-read-recently-played,user-library-modify,user-read-email,user-read-private";
     public static final String TAG =  "LoginActivity";
-    private static final String CLIENT_ID = "8d7a09be070b4364ae2b90c9c921b2de";
+    private static final String CLIENT_ID = "9cfabf79d98246f39fb9665815392647";
+
     //private static final String REDIRECT_URI = "com.MuseShare://callback";
     private static final int REQUEST_CODE = 1337;
     private EditText etUsername;
@@ -38,20 +47,15 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
 
-        AuthorizationRequest.Builder builder =
-                new AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URI);
-
-        builder.setScopes(new String[]{"streaming"});
-        AuthorizationRequest request = builder.build();
-
-        AuthorizationClient.openLoginActivity(this,REQUEST_CODE, request);
+        spotifyAuthorization();
 
         if(ParseUser.getCurrentUser() != null) {
             goMainActivity();
         }
-
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
@@ -96,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+       // Log.d(TAG, "Test -1");
         super.onActivityResult(requestCode, resultCode, intent);
 
         // Check if result comes from the correct activity
@@ -105,16 +110,27 @@ public class LoginActivity extends AppCompatActivity {
             switch (response.getType()) {
                 // Response was successful and contains auth token
                 case TOKEN:
+                    Log.d(TAG, "Test 0");
                     // Handle successful response
+//                    editor = getSharedPreferences("SPOTIFY", 0).edit();
+//                    editor.putString("token", response.getAccessToken());
+//                    Log.d("STARTING", "GOT AUTH TOKEN");
+//                    editor.apply();
+                    //waitForUserInfo();
+                    //String apiUrl = "https://api.spotify.com/v1/playlists/3Q7RAs7QYNToyczdtWsO7M";
+
+
                     break;
 
                 // Auth flow returned an error
                 case ERROR:
+                    Log.d(TAG, "Test 1");
                     // Handle error response
                     break;
 
                 // Most likely auth flow was cancelled
                 default:
+                    Log.d(TAG, "Test 2");
                     // Handle other cases
             }
         }
@@ -141,6 +157,16 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(i);
         finish();
 
+    }
+
+    private void spotifyAuthorization() {
+        AuthorizationRequest.Builder builder =
+                new AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URI);
+
+        builder.setScopes(new String[]{"streaming"});
+        AuthorizationRequest request = builder.build();
+
+        AuthorizationClient.openLoginActivity(this,REQUEST_CODE, request);
     }
 
 }
