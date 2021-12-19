@@ -68,7 +68,7 @@ public class PlayListFragment extends Fragment {
 
         //Log.d(TAG, "Test 13");
         SpotifyApi api = new SpotifyApi();
-        api.setAccessToken("BQChMWE6AsQP_GhJNur-oSXiEygItJKKu6wm9haQfBObDFvBBA0nkcrgnmNPcsYU3EyJcowcGGikZKMpFWM");
+        api.setAccessToken("BQB_T4ylopk0Yx-YDH7xCqPvHALF1wCjazHjP6xTf02wmaNwjqFScVxYm6Y0fsjdWkHEbEkuOl2JVnVu8y8");
         SpotifyService spotify = api.getService();// connects to spotify api and is ready to use
         Log.d(TAG, "Test 14");
         spotify.getPlaylists("hamzaali360", new SpotifyCallback<Pager<PlaylistSimple>>() {
