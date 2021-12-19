@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 <<<<<<< HEAD
 
 =======
->>>>>>> 8d12b5bbe1c710b2e61dd0176d4ad05e259f2865
+        >>>>>>> 8d12b5bbe1c710b2e61dd0176d4ad05e259f2865
     private static final String REDIRECT_URI = "com.MuseShare://callback";
 
     public static final String TAG =  "LoginActivity";
