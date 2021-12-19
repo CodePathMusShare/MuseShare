@@ -41,6 +41,7 @@ public class PlayListFragment extends Fragment {
     TextView tvPlaylist;
     TextView tvPlaylist2;
     TextView tvPlaylist3;
+    TextView tvPlaylist4;
 
 
     //TextView playlistText;
@@ -58,14 +59,14 @@ public class PlayListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "Test 11");
+       // Log.d(TAG, "Test 11");
         thiscontext = container.getContext();
         Log.d(TAG, thiscontext.toString());
 
 
 
 
-        Log.d(TAG, "Test 13");
+        //Log.d(TAG, "Test 13");
         SpotifyApi api = new SpotifyApi();
         api.setAccessToken("BQChMWE6AsQP_GhJNur-oSXiEygItJKKu6wm9haQfBObDFvBBA0nkcrgnmNPcsYU3EyJcowcGGikZKMpFWM");
         SpotifyService spotify = api.getService();// connects to spotify api and is ready to use
@@ -79,7 +80,7 @@ public class PlayListFragment extends Fragment {
 
             @Override
             public void success(Pager<PlaylistSimple> playlistSimplePager, Response response) {
-                Log.d(TAG, "List of Playlists : ");
+               // Log.d(TAG, "List of Playlists : ");
                 playlists = new String[playlistSimplePager.items.size()];
                 int i=0;
                 for (PlaylistSimple playlistSimple: playlistSimplePager.items) {
@@ -91,6 +92,7 @@ public class PlayListFragment extends Fragment {
                 tvPlaylist.setText("List of Playlists: ");
                 tvPlaylist2.setText(playlists[0]);
                 tvPlaylist3.setText(playlists[1]);
+                tvPlaylist4.setText(playlists[3]);
 
 
 //                ArrayAdapter adapter = new ArrayAdapter<String>(thiscontext,
@@ -119,8 +121,9 @@ public class PlayListFragment extends Fragment {
         tvPlaylist = view.findViewById(R.id.tvplaylist);
         tvPlaylist2 = view.findViewById(R.id.tvplaylist2);
         tvPlaylist3 = view.findViewById(R.id.tvplaylist3);
+        tvPlaylist4 = view.findViewById(R.id.tvplaylist4);
 
         // playlistText.setText(playlists.get(0));
-        Log.d(TAG, "Test 12");
+       // Log.d(TAG, "Test 12");
     }
 }
