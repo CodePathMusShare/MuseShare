@@ -34,10 +34,12 @@ public class MainActivity extends AppCompatActivity {
     private static final String REDIRECT_URI = "com.MuseShare://callback";
     private SpotifyAppRemote mSpotifyAppRemote;
 
+    public static final String TAG =  "MainActivity";
 
 
     @Override
     protected void onStart() {
+
         super.onStart();
         ConnectionParams connectionParams =
                 new ConnectionParams.Builder(CLIENT_ID)
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onConnected(SpotifyAppRemote spotifyAppRemote) {
                         mSpotifyAppRemote = spotifyAppRemote;
-                        Log.d("MainActivity", "Connected! Yay!");
+                        Log.d(TAG, "Connected! Yay!");
 
                         // Now you can start interacting with App Remote
                         connected();
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Throwable throwable) {
-                        Log.e("MainActivity", throwable.getMessage(), throwable);
+                        Log.e(TAG, throwable.getMessage(), throwable);
 
                         // Something went wrong when attempting to connect! Handle errors here
                     }
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         // Aaand we will finish off here.
     }
 
-    public static final String TAG = "MainActivity";
+//    public static final String TAG = "MainActivity";
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
 
